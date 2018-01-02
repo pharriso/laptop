@@ -1,0 +1,8 @@
+---
+net_name: default
+net_bridge: virbr0
+net_domain: example.com
+net_ip: 192.168.122.1
+net_mask: 255.255.255.0
+net_dhcp_start: 192.168.122.128
+net_dhcp_end: 192.168.122.254

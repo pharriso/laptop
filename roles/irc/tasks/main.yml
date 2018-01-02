@@ -1,0 +1,6 @@
+---
+
+- name: Install hexchat
+  yum:
+    name: hexchat
+    state: installed

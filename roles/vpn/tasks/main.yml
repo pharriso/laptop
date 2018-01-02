@@ -1,0 +1,9 @@
+---
+
+- name: Install VPN packages
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - NetworkManager-openvpn 
+    - NetworkManager-openvpn-gnome

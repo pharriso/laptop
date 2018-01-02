@@ -1,0 +1,31 @@
+---
+
+- name: Install httpd
+  yum:
+    name: httpd
+    state: installed
+
+- name: Start and enable httpd
+  service:
+    name: httpd
+    state: started
+    enabled: true
+
+- name: Open firewall port for http
+  firewalld:
+    service: http
+    permanent: true
+    state: enabled 
+    immediate: true
+
+- name: Create repo directory
+  file:
+    state: directory
+    path: /repo
+    setype: httpd_sys_content_t
+
+- name: Create symlink
+  file:
+    src: /repo
+    dest: /var/www/html/repo
+    state: link

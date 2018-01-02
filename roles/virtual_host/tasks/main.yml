@@ -1,0 +1,31 @@
+---
+
+- name: Install libvirt management tools
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - libvirt-client
+    - virt-manager
+    - libguestfs-tools-c
+
+- name: Install python-lxml
+  yum:
+    name: python-lxml
+    state: installed 
+
+- name: Define default network
+  virt_net:
+    command: define
+    name: default
+    xml: '{{ lookup("template", "default.xml.j2") }}'
+
+- name: Start default network
+  virt_net:
+    state: active
+    name: default
+
+- name: Enable default network
+  virt_net:
+    autostart: yes
+    name: default

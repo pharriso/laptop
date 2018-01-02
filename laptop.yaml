@@ -1,0 +1,17 @@
+---
+
+- hosts: laptop
+  connection: local
+  roles:
+    - screen
+    - firewall
+    - virtual_host
+    - irc
+    - dropbox
+    - chrome
+    - docker
+    - access
+    - vpn
+    - packer
+    - httpd
+    

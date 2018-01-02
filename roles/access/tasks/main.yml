@@ -1,0 +1,14 @@
+---
+
+- name: Start and enable sshd
+  service:
+    name: sshd
+    state: started
+    enabled: true
+
+- name: Configure passwordless sudo
+  replace:
+    path: /etc/sudoers
+    regexp: ^%wheel.*
+    replace: "%wheel	ALL=(ALL)	NOPASSWD: ALL"
+  
