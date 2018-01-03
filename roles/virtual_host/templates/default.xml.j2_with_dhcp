@@ -9,6 +9,9 @@
   <domain name='{{ net_domain }}'/>
   <dns enable='no'/>
   <ip address='{{ net_ip }}' netmask='{{ net_mask }}'>
+    <dhcp>
+      <range start='{{ net_dhcp_start }}' end='{{ net_dhcp_end }}'/>
+    </dhcp>
   </ip>
 </network>
 

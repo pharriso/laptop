@@ -1,0 +1,11 @@
+---
+
+- name: Install dhcp
+  yum:
+    name: dhcp
+    state: installed
+
+- name: Start & Enable service
+  service:
+    name: dhcpd
+    state: enabled

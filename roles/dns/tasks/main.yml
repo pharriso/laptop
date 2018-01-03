@@ -1,0 +1,14 @@
+---
+
+- name: Install bind
+  yum:
+    name: bind
+    state: installed
+
+- name: Start and enable named
+  service:
+    name: named
+    state: started
+    enabled: true
+
+- 
